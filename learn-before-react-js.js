@@ -243,4 +243,113 @@ console.log(checkFindMethod, 'Find method');
 // let filteredArray = arrayThree.filter((item) => item === 1);
 // This would return an array of all `1`s found in `arrayThree`, not just the first one.
 
+// Array Reduce() Method 
 
+// Use the reduce method to accumulate a sum of all elements in the array
+let checkReduceMethod = arrayThree.reduce((acc, current, index, array) => { 
+    // Log the accumulator, current value, index, and the entire array for each iteration
+    console.log('Accumulator:', acc, 'Current Value:', current, 'Index:', index, 'Array:', array);
+    
+    // Return the new accumulator value (sum of the current accumulator and current value)
+    return acc + current;
+}, 0); // Initial value of the accumulator is set to 0
+
+// Log the final result of the reduction
+console.log('Sum of all elements:', checkReduceMethod);
+
+// Explanation:
+// The `reduce` method processes each element in the array and applies the callback function to it.
+// The callback function takes four parameters:
+// - `acc` (accumulator): Keeps track of the accumulated value. Initially, it's set to the value provided as the second argument to `reduce` (0 in this case).
+// - `current`: The current element being processed in the array.
+// - `index`: The index of the current element (optional, used here for logging purposes).
+// - `array`: The original array (optional, used here for logging purposes).
+//
+// For each element in the array, the `reduce` function adds the `current` element to the `acc` (accumulator).
+// The `acc` is then updated with this new value and passed to the next iteration.
+// After all elements have been processed, `reduce` returns the final value of `acc`, which is the sum of all elements in the array.
+
+
+// Array includes() Method
+// Check if the array contains the number 10
+const containsTen = arrayThree.includes(10);
+
+// Log the result to the console
+console.log(containsTen); // Output: true
+
+
+// Array IndexOf() Method
+const checkIndexOfMethod = arrayThree.indexOf(3);
+console.log(checkIndexOfMethod, 'IndexOf() Method'); // Output: true
+
+// const checkIndexOfMethod = arrayThree.indexOf(300); // Does not exist it 300 number of an elements in the array 
+// console.log(checkIndexOfMethod, 'IndexOf() Method'); // Output: -1
+
+
+// Array findIndex() Method 
+const checkFindIndexMethod = arrayThree.findIndex(item => item === 10)
+console.log(checkFindIndexMethod, 'FindIndex() Method');
+
+
+// 18) import and export // Default Exports vs Named Exports
+
+// components -> a,b,c ->
+// export cosnt SomeName = () => {
+ 
+// }
+
+// function BComponent (){
+//      return 'Something';
+// }
+
+// import {SomeName} from 'path';
+// import BComponent from 'path';
+
+// 19) Fetch api and async await
+
+// Fetch Api Data like this way 
+// const list = document.querySelector('.list');
+// async function fetchListOfData(){
+//      try{
+//         const response = await fetch('https://dummyjson.com/products',{
+//             method : 'GET',
+//         })
+//           const result = await response.json();
+//           console.log(result);
+
+//           list.innerHTML = result.products.map(product => `
+//             <div>
+//                 <h2>${product.title}</h2>
+//                 <p>${product.description}</p>
+//                 <p>Price: $${product.price}</p>
+//                 <p>Brand: $${product.brand}</p>
+//             </div>
+//         `).join('');
+//      }catch(e){
+//         console.log(e);
+//      }
+// }
+
+// fetchListOfData()
+
+// we can also fetch products api like this way 
+const list = document.querySelector('.list');
+async function getListofProductData(){
+    try{
+        const response = await fetch('https://dummyjson.com/products',{
+            method : 'GET',
+        });
+        const  result = await response.json();
+        console.log(result);
+        if(result && result.products && result.products.length) renderProducts(result.products)
+    }catch(e){
+         console.log(e);
+    }
+}
+
+function renderProducts(getProducts){
+    list.innerHTML = getProducts.map(item=> `<p>${item.title}</p>`).join('');
+}
+
+
+getListofProductData()
