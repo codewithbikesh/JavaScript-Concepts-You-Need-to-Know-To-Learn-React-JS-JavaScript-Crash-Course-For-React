@@ -33,17 +33,17 @@
 
 // 3) Template Literals
 
-// let firstName = "Bikesh Kumar";
-// let lastName = "Gupta";
-// let prefix = "Mr";
+let firstName = "Bikesh Kumar";
+let lastName = "Gupta";
+let prefix = "Mr";
 
-// // Old method to use:
-// console.log(prefix + " " + firstName + " " + lastName);
-// // Output result: Mr Bikesh Kumar Gupta
+// Old method to use:
+console.log(prefix + " " + firstName + " " + lastName);
+// Output result: Mr Bikesh Kumar Gupta
 
-// // New method using template literals:
-// console.log(`${prefix} ${firstName} ${lastName}`);
-// // Output result: Mr Bikesh Kumar Gupta
+// New method using template literals:
+console.log(`${prefix} ${firstName} ${lastName}`);
+// Output result: Mr Bikesh Kumar Gupta
 
 
 // 4) Ternary Operator
@@ -199,7 +199,7 @@ const personsArray = [
     { name: 'Bikesh', city: 'Kathmandu', age: 27 },
     { name: 'Happy', city: 'Kathmandu', age: 25 },
 ];
-// Array Map() Method
+// 10) Array Map() Method
 // const extractPersonsArray = personsArray.map((person, index) =>{
 //     // console.log(index, index);
 //     return `${person.name} ${person.city} ${person.age}`;
@@ -219,16 +219,16 @@ console.log(extraAllPersonsFromKathmandu);
 // In this case, it returns all persons from the `personsArray` whose `city` is 'Kathmandu' and `age` is 27.
 // The resulting array will include all matching persons, not just the first match.
 
-// Array some() Method
+// 11) Array some() Method
 let checkSomeMethod = personsArray.some((person, index) => person.age === 20);
 console.log(`${checkSomeMethod}`);
 // the output result will be true because theh person age is 20 available there 
 
-// Array every Method
+// 12) Array every Method
 let checkEveryMethod = personsArray.every((person, index) => person.age === 20);
 console.log(`${checkEveryMethod} every person`);
 
-// Array find() Method
+// 13) Array find() Method
 const arrayThree = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // Use the find method to get the first occurrence of '1' in the array
@@ -243,7 +243,7 @@ console.log(checkFindMethod, 'Find method');
 // let filteredArray = arrayThree.filter((item) => item === 1);
 // This would return an array of all `1`s found in `arrayThree`, not just the first one.
 
-// Array Reduce() Method 
+// 14) Array Reduce() Method 
 
 // Use the reduce method to accumulate a sum of all elements in the array
 let checkReduceMethod = arrayThree.reduce((acc, current, index, array) => { 
@@ -270,7 +270,7 @@ console.log('Sum of all elements:', checkReduceMethod);
 // After all elements have been processed, `reduce` returns the final value of `acc`, which is the sum of all elements in the array.
 
 
-// Array includes() Method
+// 15) Array includes() Method
 // Check if the array contains the number 10
 const containsTen = arrayThree.includes(10);
 
@@ -278,7 +278,7 @@ const containsTen = arrayThree.includes(10);
 console.log(containsTen); // Output: true
 
 
-// Array IndexOf() Method
+// 16) Array IndexOf() Method
 const checkIndexOfMethod = arrayThree.indexOf(3);
 console.log(checkIndexOfMethod, 'IndexOf() Method'); // Output: true
 
@@ -286,7 +286,7 @@ console.log(checkIndexOfMethod, 'IndexOf() Method'); // Output: true
 // console.log(checkIndexOfMethod, 'IndexOf() Method'); // Output: -1
 
 
-// Array findIndex() Method 
+// 17) Array findIndex() Method 
 const checkFindIndexMethod = arrayThree.findIndex(item => item === 10)
 console.log(checkFindIndexMethod, 'FindIndex() Method');
 
